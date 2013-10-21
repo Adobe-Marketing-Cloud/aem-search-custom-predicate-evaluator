@@ -22,6 +22,10 @@
     <version>0.1.0-SNAPSHOT</version>
     <name>aem-docs-custom-predicate-evaluator</name>
     <description>com.adobe.aem.docs.search - aem-docs-custom-predicate-evaluator</description>
+    <organization>
+		<name>Adobe Research</name>
+    </organization>
+    <inceptionYear>2013</inceptionYear>
     <build>
         <plugins>
             <plugin>
