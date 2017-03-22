@@ -16,16 +16,31 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.adobe.aem.docs.search</groupId>
-    <artifactId>aem-docs-custom-predicate-evaluator</artifactId>
+    <groupId>com.adobe.aem.search</groupId>
+    <artifactId>aem-custom-predicate-evaluator</artifactId>
     <packaging>bundle</packaging>
     <version>0.1.0-SNAPSHOT</version>
-    <name>aem-docs-custom-predicate-evaluator</name>
-    <description>com.adobe.aem.docs.search - aem-docs-custom-predicate-evaluator</description>
+    <name>aem-custom-predicate-evaluator</name>
+    <description>com.adobe.aem.search - aem-custom-predicate-evaluator</description>
     <organization>
 		<name>Adobe Research</name>
     </organization>
     <inceptionYear>2013</inceptionYear>
+
+    <properties>
+        <aem.host>localhost</aem.host>
+        <aem.port>4502</aem.port>
+        <aem.username>admin</aem.username>
+        <aem.password>admin</aem.password>
+        <aem.contextPath />
+        <publish.aem.host>localhost</publish.aem.host>
+        <publish.aem.port>4503</publish.aem.port>
+        <publish.aem.username>admin</publish.aem.username>
+        <publish.aem.password>admin</publish.aem.password>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -148,9 +163,9 @@
                                     <goal>install</goal>
                                 </goals>
                                 <configuration>
-                                    <slingUrl>http://localhost:4502/system/console</slingUrl>
-                                    <user>admin</user>
-                                    <password>admin</password>
+                                    <slingUrl>http://${aem.host}:${aem.port}${aem.contextPath}/system/console</slingUrl>
+                                    <user>${aem.username}</user>
+                                    <password>${aem.password}</password>
                                 </configuration>
                             </execution>
                         </executions>
